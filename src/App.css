@@ -171,15 +171,24 @@ button:hover {
   transition: all 0.5s;
 }
 
+.seat__grid--not1 .grid__item__box--red::after {
+  background-color: red;
+  cursor: not-allowed;
+}
+
 .seat__grid--not1 .grid__item__box:hover::after {
   background-color: green;
+}
+
+.seat__grid--not1 .grid__item__box.grid__item__box--red:hover::after {
+  background-color: red;
 }
 
 #fake-row {
   height: 40px;
 }
 
-.seat__footer button {
+.seat__footer p {
   color: black;
   background-color: #e67e22;
   font-size: 20px;

@@ -21,9 +21,9 @@
     "danhSachGhe": [
       { "soGhe": "A1", "gia": 75000, "daDat": false },
       { "soGhe": "A2", "gia": 75000, "daDat": false },
-      { "soGhe": "A3", "gia": 75000, "daDat": false },
-      { "soGhe": "A4", "gia": 75000, "daDat": false },
-      { "soGhe": "A5", "gia": 75000, "daDat": false },
+      { "soGhe": "A3", "gia": 75000, "daDat": true },
+      { "soGhe": "A4", "gia": 75000, "daDat": true },
+      { "soGhe": "A5", "gia": 75000, "daDat": true },
       { "soGhe": "A6", "gia": 75000, "daDat": false },
       { "soGhe": "A7", "gia": 75000, "daDat": false },
       { "soGhe": "A8", "gia": 75000, "daDat": false },
@@ -44,8 +44,8 @@
       { "soGhe": "B6", "gia": 75000, "daDat": false },
       { "soGhe": "B7", "gia": 75000, "daDat": false },
       { "soGhe": "B8", "gia": 75000, "daDat": false },
-      { "soGhe": "B9", "gia": 75000, "daDat": false },
-      { "soGhe": "B10", "gia": 75000, "daDat": false },
+      { "soGhe": "B9", "gia": 75000, "daDat": true },
+      { "soGhe": "B10", "gia": 75000, "daDat": true },
       { "soGhe": "B11", "gia": 75000, "daDat": false },
       { "soGhe": "B12", "gia": 75000, "daDat": false }
     ]
@@ -70,13 +70,13 @@
   {
     "hang": "D",
     "danhSachGhe": [
-      { "soGhe": "D1", "gia": 75000, "daDat": false },
-      { "soGhe": "D2", "gia": 75000, "daDat": false },
+      { "soGhe": "D1", "gia": 75000, "daDat": true },
+      { "soGhe": "D2", "gia": 75000, "daDat": true },
       { "soGhe": "D3", "gia": 75000, "daDat": false },
       { "soGhe": "D4", "gia": 75000, "daDat": false },
       { "soGhe": "D5", "gia": 75000, "daDat": false },
-      { "soGhe": "D6", "gia": 75000, "daDat": false },
-      { "soGhe": "D7", "gia": 75000, "daDat": false },
+      { "soGhe": "D6", "gia": 75000, "daDat": true },
+      { "soGhe": "D7", "gia": 75000, "daDat": true },
       { "soGhe": "D8", "gia": 75000, "daDat": false },
       { "soGhe": "D9", "gia": 75000, "daDat": false },
       { "soGhe": "D10", "gia": 75000, "daDat": false },
@@ -107,10 +107,10 @@
       { "soGhe": "F1", "gia": 75000, "daDat": false },
       { "soGhe": "F2", "gia": 75000, "daDat": false },
       { "soGhe": "F3", "gia": 75000, "daDat": false },
-      { "soGhe": "F4", "gia": 75000, "daDat": false },
-      { "soGhe": "F5", "gia": 75000, "daDat": false },
-      { "soGhe": "F6", "gia": 75000, "daDat": false },
-      { "soGhe": "F7", "gia": 75000, "daDat": false },
+      { "soGhe": "F4", "gia": 75000, "daDat": true },
+      { "soGhe": "F5", "gia": 75000, "daDat": true },
+      { "soGhe": "F6", "gia": 75000, "daDat": true },
+      { "soGhe": "F7", "gia": 75000, "daDat": true },
       { "soGhe": "F8", "gia": 75000, "daDat": false },
       { "soGhe": "F9", "gia": 75000, "daDat": false },
       { "soGhe": "F10", "gia": 75000, "daDat": false },
@@ -172,18 +172,18 @@
   {
     "hang": "J",
     "danhSachGhe": [
-      { "soGhe": "J1", "gia": 75000, "daDat": false },
-      { "soGhe": "J2", "gia": 75000, "daDat": false },
-      { "soGhe": "J3", "gia": 75000, "daDat": false },
-      { "soGhe": "J4", "gia": 75000, "daDat": false },
+      { "soGhe": "J1", "gia": 75000, "daDat": true },
+      { "soGhe": "J2", "gia": 75000, "daDat": true },
+      { "soGhe": "J3", "gia": 75000, "daDat": true },
+      { "soGhe": "J4", "gia": 75000, "daDat": true },
       { "soGhe": "J5", "gia": 75000, "daDat": false },
       { "soGhe": "J6", "gia": 75000, "daDat": false },
       { "soGhe": "J7", "gia": 75000, "daDat": false },
       { "soGhe": "J8", "gia": 75000, "daDat": false },
       { "soGhe": "J9", "gia": 75000, "daDat": false },
       { "soGhe": "J10", "gia": 75000, "daDat": false },
-      { "soGhe": "J11", "gia": 75000, "daDat": false },
-      { "soGhe": "J12", "gia": 75000, "daDat": false }
+      { "soGhe": "J11", "gia": 75000, "daDat": true },
+      { "soGhe": "J12", "gia": 75000, "daDat": true }
     ]
   }
 ]

@@ -38,7 +38,12 @@ export default class SeatGrid extends Component {
                   <div className="grid__item">{item.hang}</div>
                   {item.danhSachGhe.map((item, index) => {
                     return (
-                      <div className="grid__item grid__item__box" key={index}>
+                      <div
+                        className={`grid__item grid__item__box ${
+                          item.daDat ? "grid__item__box--red" : ""
+                        }`}
+                        key={index}
+                      >
                         {item.soGhe}
                       </div>
                     );
@@ -49,7 +54,7 @@ export default class SeatGrid extends Component {
           })}
         </div>
         <div className="seat__footer text-center px-4">
-          <button className="py-4">SCREEN THIS WAY</button>
+          <p className="py-4">SCREEN THIS WAY</p>
         </div>
       </>
     );

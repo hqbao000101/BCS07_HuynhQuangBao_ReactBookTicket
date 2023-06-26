@@ -20,8 +20,26 @@ export default class App extends Component {
       { soGhe: "A11", gia: 0, daDat: true },
       { soGhe: "A12", gia: 0, daDat: true },
     ],
+    user: {
+      customerName: "",
+      numberOfSeats: 0,
+    },
+    errors: {
+      customerName: "",
+      numberOfSeats: "",
+    },
+    isDisabled: true,
+    hienThi: false,
     choDaChon: "A4, B3, C1, D1",
   };
+
+  updateState = (name, value) => {
+    this.setState({
+      ...this.state,
+      [name]: value,
+    });
+  };
+
   render() {
     return (
       <>
@@ -30,10 +48,23 @@ export default class App extends Component {
             MOVIE SEAT SELECTION
           </h1>
           <div className="content bg-white bg-opacity-10 p-5 w-75 mx-auto">
-            <Form/>
-            <SeatGrid/>
+            <Form
+              user={this.state.user}
+              errors={this.state.errors}
+              updateState={this.updateState}
+              btnDisabled={this.state.isDisabled}
+              hienThi={this.state.hienThi}
+            />
+            <SeatGrid
+              phaseState={this.state.hienThi}
+              hienThi={this.state.hienThi}
+              user={this.state.user}
+            />
             <div className="text-center">
-              <button className="p-2 px-3 rounded-3 my-5">
+              <button
+                className="text-secondary bg-white p-2 px-3 rounded-3 my-5"
+                disabled={this.state.isDisabled}
+              >
                 Confirm Selection
               </button>
             </div>

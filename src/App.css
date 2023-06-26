@@ -95,6 +95,10 @@ button {
   letter-spacing: 1.5px;
 }
 
+button.text-secondary {
+  cursor: not-allowed;
+}
+
 button:hover {
   color: white;
   background-color: #e67e22;
@@ -176,7 +180,11 @@ button:hover {
   cursor: not-allowed;
 }
 
-.seat__grid--not1 .grid__item__box:hover::after {
+.seat__grid--not1 .grid__item__box--green::after {
+  background-color: green;
+}
+
+.seat__grid--not1 .grid__item__box.active:hover::after {
   background-color: green;
 }
 

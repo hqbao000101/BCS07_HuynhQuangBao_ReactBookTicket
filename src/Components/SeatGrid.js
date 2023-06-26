@@ -2,6 +2,29 @@ import React, { Component } from "react";
 import SeatList from "../danhSachGhe.json";
 
 export default class SeatGrid extends Component {
+  state = { quantity: 0 };
+
+  chooseSeat = (event) => {
+    console.log(event.target);
+    let className = event.target.className;
+    let numberOfSeat = this.state.quantity;
+    if (
+      !className.includes("grid__item__box--red") &&
+      !className.includes("grid__item__box--green") &&
+      numberOfSeat <= this.props.user.numberOfSeats - 1
+    ) {
+      event.target.className = "grid__item grid__item__box active grid__item__box--green ";
+      numberOfSeat++;
+    } else if (className.includes("grid__item__box--green")) {
+      event.target.className = "grid__item grid__item__box active";
+      numberOfSeat--;
+    }
+    this.setState({
+      ...this.quantity,
+      quantity: numberOfSeat,
+    });
+  };
+
   render() {
     return (
       <>
@@ -19,9 +42,13 @@ export default class SeatGrid extends Component {
             <p>Empty Seat</p>
           </div>
         </div>
-        <div className="mt-4 mb-2">
-          <span className="text-center bg-warning text-black fs-5 d-block mx-auto w-50 py-2 visually-hidden">
-            Please Select Your Seats !
+        <div className="mt-4 mb-2 vis">
+          <span
+            className={`text-center bg-warning text-black fs-5 d-block mx-auto w-50 py-2 ${
+              this.props.phaseState ? "" : "visually-hidden"
+            }`}
+          >
+            Please Select Your Seats!
           </span>
         </div>
         <div className="mb-5">
@@ -40,9 +67,11 @@ export default class SeatGrid extends Component {
                     return (
                       <div
                         className={`grid__item grid__item__box ${
-                          item.daDat ? "grid__item__box--red" : ""
-                        }`}
+                          this.props.hienThi ? "active" : ""
+                        } ${item.daDat ? "grid__item__box--red" : ""}`}
                         key={index}
+                        onClick={this.chooseSeat}
+                        id={item.soGhe}
                       >
                         {item.soGhe}
                       </div>

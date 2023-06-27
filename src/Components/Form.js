@@ -40,6 +40,10 @@ export default class Form extends Component {
         disabledBtn = true;
       } else {
         disabledBtn = false;
+        this.props.updateState("user", newValue);
+        this.props.updateState("errors", newErrors);
+        this.props.updateState("isDisabled", !disabledBtn);
+        return;
       }
     }
 

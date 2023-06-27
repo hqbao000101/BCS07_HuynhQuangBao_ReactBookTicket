@@ -24,24 +24,32 @@ export default class Form extends Component {
           newErrors[id] = "Name must only contain letters";
         }
       } else {
+        newValue[id] = value * 1;
         const numberRegex = /^\d+$/;
         if (!numberRegex.test(newValue[id])) {
           newErrors[id] = "Number of Seats must only contain numbers";
+        }
+        if (newValue[id] === 0) {
+          newErrors[id] = "You can't have zero seats!";
         }
       }
     }
 
     // ! active button
-    let disabledBtn = true;
-    if (newValue[id] !== "" && newErrors[id] === "") {
-      disabledBtn = false;
+    let disabledBtn = false;
+    for (let item in this.props.errors) {
+      if (this.props.user[item] && this.props.errors[item] === "") {
+        disabledBtn = true;
+      } else {
+        disabledBtn = false;
+      }
     }
 
     // ! update State
     // console.log(newValue, newErrors);
     this.props.updateState("user", newValue);
     this.props.updateState("errors", newErrors);
-    this.props.updateState("isDisabled", disabledBtn);
+    this.props.updateState("isDisabled", !disabledBtn);
   };
 
   render() {
@@ -66,7 +74,7 @@ export default class Form extends Component {
                   placeholder="Your fullname..."
                   title="Please fill out this field"
                   onChange={this.getValues}
-                  readOnly={this.props.hienThi}
+                  // readOnly={this.props.hienThi}
                 />
               </div>
               <p className="text-danger fst-italic mt-3 text-center">
@@ -87,7 +95,7 @@ export default class Form extends Component {
                   title="Please fill out this field"
                   onChange={this.getValues}
                   data-type="number"
-                  readOnly={this.props.hienThi}
+                  // readOnly={this.props.hienThi}
                 />
               </div>
               <p className="text-danger fst-italic mt-3 text-center">

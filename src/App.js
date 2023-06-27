@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 import SeatGrid from "./Components/SeatGrid";
+import SeatList from "./danhSachGhe.json";
 
 export default class App extends Component {
   state = {
@@ -30,7 +31,8 @@ export default class App extends Component {
     },
     isDisabled: true,
     hienThi: false,
-    choDaChon: "A4, B3, C1, D1",
+    choDaChon: [],
+    thanks: false
   };
 
   updateState = (name, value) => {
@@ -40,7 +42,20 @@ export default class App extends Component {
     });
   };
 
+  formatPayment = (num) => {
+    let numberArr = num.toString().split("");
+    let indexArr = 1;
+    for (let i = numberArr.length - 1; i >= 0; i--) {
+      if (indexArr % 3 === 0 && indexArr !== numberArr.length) {
+        numberArr[i] = `.${numberArr[i]}`;
+      }
+      indexArr++;
+    }
+    return numberArr.join("");
+  };
+
   render() {
+    const totalPayment = SeatList[1].danhSachGhe[0].gia * this.state.choDaChon.length;
     return (
       <>
         <div className="container">
@@ -56,18 +71,13 @@ export default class App extends Component {
               hienThi={this.state.hienThi}
             />
             <SeatGrid
-              phaseState={this.state.hienThi}
               hienThi={this.state.hienThi}
               user={this.state.user}
+              btnDisabled={this.state.isDisabled}
+              selectedSeats={this.state.choDaChon}
+              updateState={this.updateState}
+              thanks={this.state.thanks}
             />
-            <div className="text-center">
-              <button
-                className="text-secondary bg-white p-2 px-3 rounded-3 my-5"
-                disabled={this.state.isDisabled}
-              >
-                Confirm Selection
-              </button>
-            </div>
             <table className="table bg-white text-black w-75 mx-auto">
               <thead>
                 <tr className="text-center fw-bold">
@@ -79,14 +89,22 @@ export default class App extends Component {
               </thead>
               <tbody>
                 <tr className="text-center">
-                  <td>Bao Huynh Quang</td>
-                  <td>4</td>
-                  <td>{this.state.choDaChon}</td>
-                  <td>250.000 VND</td>
+                  <td>{this.state.user.customerName}</td>
+                  <td>
+                    {this.state.user.numberOfSeats
+                      ? this.state.user.numberOfSeats
+                      : ""}
+                  </td>
+                  <td>{this.state.choDaChon.join(", ")}</td>
+                  <td>
+                    {totalPayment
+                      ? `${this.formatPayment(totalPayment)} VND`
+                      : ""}
+                  </td>
                 </tr>
               </tbody>
             </table>
-            <p className="text-warning text-center mt-5 fs-3 visually-hidden">
+            <p className={`text-warning text-center mt-5 fs-3 ${!this.state.thanks ? "visually-hidden" : ""}`}>
               <i className="fa-solid fa-heart text-danger me-2"></i>Thanks for
               Booking. Have a good time watching movies{" "}
               <i className="fa-solid fa-heart text-danger ms-2"></i>

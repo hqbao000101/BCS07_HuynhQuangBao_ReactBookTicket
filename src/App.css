@@ -60,12 +60,16 @@ body {
   font-size: 60px;
   letter-spacing: 5px;
   color: #e67e22;
-  text-shadow: 2px 2px 10px black;
+  text-shadow: 3px 3px 7px black;
 }
 
 #footer {
   margin-bottom: 0;
   padding-bottom: 40px;
+}
+
+#main__content {
+  box-shadow: 3px 3px 50px black;
 }
 
 /* ! Form */

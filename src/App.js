@@ -75,7 +75,7 @@ export default class App extends Component {
           <h1 id="title" className="text-center py-5">
             MOVIE SEAT SELECTION
           </h1>
-          <div className="content bg-white bg-opacity-10 p-5 w-75 mx-auto position-relative">
+          <div id="main__content" className="content bg-white bg-opacity-10 p-5 w-75 mx-auto position-relative">
             <Form
               user={this.state.user}
               errors={this.state.errors}
@@ -124,7 +124,7 @@ export default class App extends Component {
               }`}
             >
               <i className="fa-solid fa-heart text-danger me-2"></i>Thanks for
-              Booking. Have a good time watching movies{" "}
+              choosing us. Have a great time watching movies
               <i className="fa-solid fa-heart text-danger ms-2"></i>
             </p>
             <button id="reload" onClick={this.reload} title="Reload Selection">

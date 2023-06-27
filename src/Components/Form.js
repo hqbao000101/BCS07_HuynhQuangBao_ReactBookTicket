@@ -8,12 +8,10 @@ export default class Form extends Component {
     // ! update user
     let newValue = this.props.user;
     newValue[id] = value;
-    // console.log(newValue);
 
     // ! update errors
     let newErrors = this.props.errors;
     let type = event.target.getAttribute("data-type");
-    // console.log(newErrors);
     if (newValue[id] === "") {
       newErrors[id] = "This field must not be empty";
     } else {
@@ -46,14 +44,12 @@ export default class Form extends Component {
     }
 
     // ! update State
-    // console.log(newValue, newErrors);
     this.props.updateState("user", newValue);
     this.props.updateState("errors", newErrors);
     this.props.updateState("isDisabled", !disabledBtn);
   };
 
   render() {
-    // console.log(this.props.btnDisabled);
     return (
       <>
         <p className="form__title fs-4">
@@ -74,7 +70,6 @@ export default class Form extends Component {
                   placeholder="Your fullname..."
                   title="Please fill out this field"
                   onChange={this.getValues}
-                  // readOnly={this.props.hienThi}
                 />
               </div>
               <p className="text-danger fst-italic mt-3 text-center">
@@ -95,7 +90,6 @@ export default class Form extends Component {
                   title="Please fill out this field"
                   onChange={this.getValues}
                   data-type="number"
-                  // readOnly={this.props.hienThi}
                 />
               </div>
               <p className="text-danger fst-italic mt-3 text-center">

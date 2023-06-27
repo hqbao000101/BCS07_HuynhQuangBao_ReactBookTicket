@@ -1,10 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 import SeatGrid from "./Components/SeatGrid";
 import SeatList from "./danhSachGhe.json";
 
 export default class App extends Component {
+  constructor() {
+    super();
+    this.ref = createRef();
+  }
+
   state = {
     user: {
       customerName: "",
@@ -54,8 +59,12 @@ export default class App extends Component {
       hienThi: false,
       choDaChon: [],
       thanks: false,
-    })
-  }
+    });
+    this.ref.current.setState({
+      quantity: 0,
+      selectedSeats: [],
+    });
+  };
 
   render() {
     const totalPayment =
@@ -81,6 +90,7 @@ export default class App extends Component {
               selectedSeats={this.state.choDaChon}
               updateState={this.updateState}
               thanks={this.state.thanks}
+              ref={this.ref}
             />
             <table className="table bg-white text-black w-75 mx-auto">
               <thead>

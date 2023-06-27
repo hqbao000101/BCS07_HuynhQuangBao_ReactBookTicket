@@ -8,7 +8,6 @@ export default class SeatGrid extends Component {
   };
 
   chooseSeat = (event) => {
-    // console.log(event.target);
     let { id, className } = event.target;
     let numberOfSeat = this.state.quantity;
     let seatList = this.props.selectedSeats;
@@ -35,7 +34,6 @@ export default class SeatGrid extends Component {
   };
 
   render() {
-    // console.log(this.state.quantity !== this.props.user.numberOfSeats || this.props.btnDisabled);
     return (
       <>
         <div className="seat__types">

@@ -74,6 +74,7 @@ export default class Form extends Component {
                   placeholder="Your fullname..."
                   title="Please fill out this field"
                   onChange={this.getValues}
+                  value={this.props.user.customerName}
                 />
               </div>
               <p className="text-danger fst-italic mt-3 text-center">

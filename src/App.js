@@ -64,6 +64,7 @@ export default class App extends Component {
       quantity: 0,
       selectedSeats: [],
     });
+    document.getElementById("numberOfSeats").value = "";
   };
 
   render() {
@@ -75,7 +76,10 @@ export default class App extends Component {
           <h1 id="title" className="text-center py-5">
             MOVIE SEAT SELECTION
           </h1>
-          <div id="main__content" className="content bg-white bg-opacity-10 p-5 w-75 mx-auto position-relative">
+          <div
+            id="main__content"
+            className="content bg-white bg-opacity-10 p-5 w-75 mx-auto position-relative"
+          >
             <Form
               user={this.state.user}
               errors={this.state.errors}

@@ -90,6 +90,7 @@ export default class App extends Component {
             <SeatGrid
               hienThi={this.state.hienThi}
               user={this.state.user}
+              errors={this.state.errors}
               btnDisabled={this.state.isDisabled}
               selectedSeats={this.state.choDaChon}
               updateState={this.updateState}

@@ -14,6 +14,8 @@ export default class SeatGrid extends Component {
     if (
       !className.includes("grid__item__box--red") &&
       !className.includes("grid__item__box--green") &&
+      this.props.errors.customerName === "" &&
+      this.props.hienThi &&
       numberOfSeat <= this.props.user.numberOfSeats - 1
     ) {
       event.target.className =

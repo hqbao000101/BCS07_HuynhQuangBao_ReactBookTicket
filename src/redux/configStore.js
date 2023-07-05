@@ -4,7 +4,7 @@ import { seatReducer } from "./reducer/seatReducer";
 
 export const store = configureStore({
   reducer: {
-    hoTen: (state = "HuynhQuangBao", action) => {
+    project: (state = "ex4-react-book-ticket", action) => {
       return state;
     },
     ticket: ticketReducer,
